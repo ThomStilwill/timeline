@@ -1,0 +1,39 @@
+<html ng-app="TimelineModule">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-sanitize.js"></script>
+        <script src="timeline.js"></script>
+        <link type="text/css" rel="stylesheet" href="style.css"/>
+    </head>
+    <body ng-controller="TimelineController">
+        <h1>Timeline</h1>
+        <div class="timeline">
+            <div class="event" ng-repeat="item in items">
+
+                <div class="timestamp">
+                    {{item.timestamp}}
+                </div>
+                <div class="lollipop">
+                    <div class="candy"></div>
+                    <div class="stick"></div>
+                </div>
+                <div class="item">
+                    <div class="title">
+                        <a ng-click="toggle($event,$index)"
+                           ng-if="item.description">
+                                {{item.title}}
+                           <span ng-if="selected !== $index">+</span>
+                           <span ng-if="selected === $index">-</span>
+                        </a> 
+                        <span ng-if="!item.description">{{item.title}}</span>
+                    </div>
+                    <div class="description"
+                        ng-class="{'description--close': selected !== $index, 'description--open': selected === $index}"
+                        ng-if="item.description">
+                        <div ng-bind-html="item.description" class="description-content"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

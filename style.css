@@ -1,0 +1,92 @@
+html {
+ margin: 0;
+ padding: 0;
+ font-family: "verdana";
+ font-size: 62.5%;
+}
+
+body {
+    font-size: 1.2em;
+}
+
+.timeline {
+    background-color: rgb(245,245,245);
+    padding-top: 15px;
+}
+
+.event {
+    display:flex;
+    position: relative;
+    width: 100%;
+}
+
+.event > div {
+    vertical-align: top;
+}
+
+.timestamp {
+    margin-top: -2px;
+    text-align: right;
+    width:80px;
+}
+
+.lollipop {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: stretch;
+    width: 50px;
+}
+
+.item {
+    display: inline-block;
+    margin-top: -2px;
+    margin-bottom:  15px;
+    flex: 1;
+    padding: 0 15px 5px 0;
+}
+
+.title {
+    margin-bottom: 5px;
+}
+
+.description {
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.description--open {
+    transition: max-height 0.3s ease-in-out;
+    background-color: red;
+}
+
+.description--close {
+    max-height: 0px!important;
+    transition: max-height 0.3s ease-in-out;
+    background-color: green;
+}
+
+.description-content {
+    padding: 10px;
+    background-color: transparent;
+}
+
+.candy {
+    width: 12px;
+    height:12px;
+    border-radius: 6px;
+    background-color: gray;
+    margin: 0 auto;
+}
+
+.stick {
+    width: 4px;
+    flex: 1;
+    margin: 0 auto;
+    background-color: gray;
+}
+
+.event:last-child .lollipop .stick {
+    display: none;
+}
